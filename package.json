@@ -1,7 +1,6 @@
 {
   "name": "max",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
@@ -16,5 +15,15 @@
     "fs": "^0.0.1-security",
     "mongodb": "^5.0.0",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radreport123/max.git"
+  },
+  "bugs": {
+    "url": "https://github.com/radreport123/max/issues"
+  },
+  "homepage": "https://github.com/radreport123/max#readme",
+  "description": ""
 }
