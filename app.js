@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const mongoConnect = require('./util/database').mongoConnect;
 const getDb = require('./util/database').getDb;
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 
 //const dataPath = path.join(__dirname, 'data', 'product.json');
