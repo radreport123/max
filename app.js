@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const mongoConnect = require('./util/database').mongoConnect;
 const getDb = require('./util/database').getDb;
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 
 //const dataPath = path.join(__dirname, 'data', 'product.json');
@@ -78,7 +78,7 @@ app.use('/' , (req, res , next ) =>  {
 
 mongoConnect(() => {
   console.log('Connected to MongoDB');
-  app.listen(port, () => {
-    console.log(`App is listening on port ${port}`);
+  app.listen(port, '0.0.0.0', () => {
+    console.log(`App is listening on 0.0.0.0:${port}`);
   });
 });
