@@ -78,7 +78,7 @@ app.use('/' , (req, res , next ) =>  {
 
 mongoConnect(() => {
   console.log('Connected to MongoDB');
-  app.listen(port, () => {
-    console.log(`App is listening on ${port}`);
+  app.listen(port, '0.0.0.0', () => {
+    console.log(`App is listening on 0.0.0.0:${port}`);
   });
 });
