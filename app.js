@@ -10,13 +10,13 @@ const port = process.env.PORT;
 //const dataPath = path.join(__dirname, 'data', 'product.json');
 
 
-class Car {
-    constructor(Option){
-    this.make = Option.make;
-    }
+//class Car {
+    //constructor(Option){
+    //this.make = Option.make;
+    //}
 
-    save() {
-      const db = getDb();
+    //save() {
+      /*const db = getDb();
       return db.collection('Car')
       .insertOne(this)
       .then(result => {
@@ -26,7 +26,7 @@ class Car {
         console.log(err);
       });
     }
-}
+  *///}
 
 
 
@@ -41,10 +41,10 @@ app.use(bodyParser.json());
 
 
 
-app.get('/chest', (req, res, next) => {
+/*app.get('/chest', (req, res, next) => {
    res.sendFile(path.join(__dirname, 'chest.html'));
 
-});
+*///});
 
 
 //app.post('/chest1' , (req, res , next ) =>  {
@@ -54,7 +54,7 @@ app.get('/chest', (req, res, next) => {
 
 
 
-app.post('/shoulder' , (req, res, next) => {
+/*app.post('/shoulder' , (req, res, next) => {
   const make = req.body.title;
   const Honda = new Car (make);
   Honda
@@ -67,7 +67,7 @@ app.post('/shoulder' , (req, res, next) => {
     .catch(err => {
       console.log(err);
     });
-});
+  *///});
 
 
 
@@ -76,9 +76,8 @@ app.use('/' , (req, res , next ) =>  {
 });
 
 
-mongoConnect(() => {
-  console.log('Connected to MongoDB');
-  app.listen(port, '0.0.0.0', () => {
+
+
+  app.listen(port, () => {
     console.log(`App is listening on 0.0.0.0:${port}`);
   });
-});
