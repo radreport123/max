@@ -9,10 +9,10 @@ const getDb = require('./util/database').getDb;
 const port = process.env.PORT || 3000;
 
 
-//const dataPath = path.join(__dirname, 'data', 'product.json');
+const dataPath = path.join(__dirname, 'data', 'product.json');
 
 
-/*class Car {
+class Car {
     constructor(Option){
     this.make = Option.make;
     }
@@ -29,7 +29,7 @@ const port = process.env.PORT || 3000;
       });
     }
 }
-*/
+
 
 
 const app = express();
@@ -38,7 +38,7 @@ const app = express();
 
 
 
-/*app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
@@ -69,7 +69,7 @@ app.post('/shoulder' , (req, res, next) => {
     .catch(err => {
       console.log(err);
     });
-});*/
+});
 
 
 
@@ -81,8 +81,13 @@ app.use('/' , (req, res , next ) =>  {
 
 
 
+
+
+
+mongoConnect(() => {
+  console.log('Connected to MongoDB');
   app.listen(port, (req, res, next) => {
     console.log('server is started on port 3000');
+  });
 });
-
 
