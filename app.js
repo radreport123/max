@@ -7,10 +7,10 @@ const getDb = require('./util/database').getDb;
 const port = process.env.$PORT;
 
 
-const dataPath = path.join(__dirname, 'data', 'product.json');
+//const dataPath = path.join(__dirname, 'data', 'product.json');
 
 
-class Car {
+/*class Car {
     constructor(Option){
     this.make = Option.make;
     }
@@ -27,7 +27,7 @@ class Car {
       });
     }
 }
-
+*/
 
 
 const app = express();
@@ -36,7 +36,7 @@ const app = express();
 
 
 
-app.use(bodyParser.urlencoded({ extended: false }));
+/*app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
@@ -67,7 +67,7 @@ app.post('/shoulder' , (req, res, next) => {
     .catch(err => {
       console.log(err);
     });
-});
+});*/
 
 
 
@@ -76,9 +76,7 @@ app.use('/' , (req, res , next ) =>  {
 });
 
 
-mongoConnect(() => {
-  console.log('Connected to MongoDB');
+
   app.listen(port, '0.0.0.0', () => {
     console.log(`App is listening on 0.0.0.0:${port}`);
   });
-});
